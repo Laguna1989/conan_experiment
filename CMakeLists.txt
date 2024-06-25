@@ -22,15 +22,10 @@ endif()
 
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
-find_package(ApprovalTests REQUIRED)
 find_package(Catch2 REQUIRED)
 
 
 add_executable(approvaltest_conan main.cpp)
-target_link_libraries(approvaltest_conan
-    PUBLIC
-        ApprovalTests::ApprovalTests
-        Catch2::Catch2WithMain
-)
+target_link_libraries(approvaltest_conan Catch2::Catch2WithMain)
 
 
